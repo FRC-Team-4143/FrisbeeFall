@@ -30,17 +30,19 @@ public class Shooter extends Subsystem {
     public void servoSet0(){
         servo.setAngle(0);
     }
+///////////////////////////////////////////////////
     
     //talon methods
     public void startMotor(){
-        shooterMotor.set(1);
+        shooterMotor.set(-1);
     }
     
     public void stopMotor(){
         shooterMotor.set(0);
     }
+////////////////////////////////////////////////////
     
-    //conveyor motors
+    //conveyor methods
     public void conveyorForward(){
         conveyor.set(Relay.Value.kForward);
     }
@@ -52,7 +54,7 @@ public class Shooter extends Subsystem {
     public void conveyorOff(){
         conveyor.set(Relay.Value.kOff);
     }
-    
+/////////////////////////////////////////////////////
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     public void initDefaultCommand() {

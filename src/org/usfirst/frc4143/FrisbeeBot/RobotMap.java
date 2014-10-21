@@ -45,11 +45,11 @@ public class RobotMap {
         driveTrainRobotDrive21.setSensitivity(0.5);
         driveTrainRobotDrive21.setMaxOutput(1.0);
         
-        shooterServo = new Servo(1, 3);
+        shooterServo = new Servo(6);
 	LiveWindow.addActuator("Shooter", "Servo", shooterServo);
         
-        shooterShooterMotors = new Talon(1);
-        conveyor = new Relay(2);
+        shooterShooterMotors = new Talon(8);
+        conveyor = new Relay(7);
         pneumaticsCompressor = new Compressor(3, 1);        
         pneumaticsSolenoid = new Solenoid(1);
 	LiveWindow.addActuator("Pneumatics", "Solenoid", pneumaticsSolenoid);
