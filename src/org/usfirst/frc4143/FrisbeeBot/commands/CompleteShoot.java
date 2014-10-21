@@ -29,6 +29,7 @@ public class  CompleteShoot extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        Robot.shooter.running = true;
         Robot.shooter.startMotor();
         Timer.delay(1);
         Robot.shooter.stopMotor();
@@ -38,10 +39,15 @@ public class  CompleteShoot extends Command {
         Robot.shooter.conveyorForward();
         Timer.delay(1);
         Robot.shooter.conveyorOff();
+        Robot.shooter.running = false;
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        if (!Robot.shooter.running) {
+            return true;
+        } else {
+            return false;
+        }
     }
     // Called once after isFinished returns true
     protected void end() {
