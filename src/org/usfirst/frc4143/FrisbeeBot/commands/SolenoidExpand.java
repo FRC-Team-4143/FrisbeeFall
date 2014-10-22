@@ -39,7 +39,7 @@ public class SolenoidExpand extends Command {
     protected void execute() {
         Pneumatics.running = true;
         Pneumatics.solenoidExpand();
-        Timer.delay(1);
+        Timer.delay(.5);
         Pneumatics.solenoidOff();
         Pneumatics.running = false;
     }
