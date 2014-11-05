@@ -31,6 +31,7 @@ public class  TripleShot extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.shooter.running = true;
+        
         //Shoot 1st
         Robot.shooter.startMotor();
         Timer.delay(Robot.shooter.delayMotor);
@@ -63,6 +64,7 @@ public class  TripleShot extends Command {
         Robot.shooter.conveyorForward();
         Timer.delay(Robot.shooter.delayConveyor);
         Robot.shooter.conveyorOff();
+        
         Robot.shooter.running = false;
     }
     // Make this return true when this Command no longer needs to run execute()
