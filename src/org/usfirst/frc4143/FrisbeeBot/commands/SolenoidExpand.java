@@ -10,6 +10,7 @@
 package org.usfirst.frc4143.FrisbeeBot.commands;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Preferences;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc4143.FrisbeeBot.Robot;
@@ -39,7 +40,7 @@ public class SolenoidExpand extends Command {
     protected void execute() {
         Pneumatics.running = true;
         Pneumatics.solenoidExpand();
-        Timer.delay(.5);
+        Timer.delay(Preferences.getInstance().getDouble("SolenoidExpandDistance", .5));
         Pneumatics.solenoidOff();
         Pneumatics.running = false;
     }

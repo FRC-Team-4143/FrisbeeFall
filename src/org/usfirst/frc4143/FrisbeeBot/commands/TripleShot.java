@@ -16,8 +16,8 @@ import org.usfirst.frc4143.FrisbeeBot.Robot;
 /**
  *
  */
-public class  CompleteShoot extends Command {
-    public CompleteShoot() {
+public class  TripleShot extends Command {
+    public TripleShot() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 	
@@ -31,6 +31,29 @@ public class  CompleteShoot extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.shooter.running = true;
+        //Shoot 1st
+        Robot.shooter.startMotor();
+        Timer.delay(Robot.shooter.delayMotor);
+        Robot.shooter.stopMotor();
+        Robot.shooter.servoSet90();
+        Timer.delay(Robot.shooter.delayServo);
+        Robot.shooter.servoSet0();
+        Robot.shooter.conveyorForward();
+        Timer.delay(Robot.shooter.delayConveyor);
+        Robot.shooter.conveyorOff();
+        
+        //Shoot 2nd
+        Robot.shooter.startMotor();
+        Timer.delay(Robot.shooter.delayMotor);
+        Robot.shooter.stopMotor();
+        Robot.shooter.servoSet90();
+        Timer.delay(Robot.shooter.delayServo);
+        Robot.shooter.servoSet0();
+        Robot.shooter.conveyorForward();
+        Timer.delay(Robot.shooter.delayConveyor);
+        Robot.shooter.conveyorOff();
+        
+        //Shoot 3rd
         Robot.shooter.startMotor();
         Timer.delay(Robot.shooter.delayMotor);
         Robot.shooter.stopMotor();
