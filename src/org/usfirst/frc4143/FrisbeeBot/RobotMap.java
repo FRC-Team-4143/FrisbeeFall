@@ -25,7 +25,7 @@ public class RobotMap {
     public static SpeedController driveTrainRightMotor;
     public static RobotDrive robotDrive;
     public static Servo shooterServo;
-    public static Talon shooterMotor;
+    public static Jaguar shooterMotor;
     public static Relay conveyor;
     public static Compressor pneumaticsCompressor;
     public static DoubleSolenoid solenoid;
@@ -48,7 +48,7 @@ public class RobotMap {
         shooterServo = new Servo(6);
 	LiveWindow.addActuator("Shooter", "Servo", shooterServo);
         
-        shooterMotor = new Talon(8);
+        shooterMotor = new Jaguar(8);
         conveyor = new Relay(7);
         pneumaticsCompressor = new Compressor(3, 1);        
         solenoid = new DoubleSolenoid(1, 2);

@@ -36,34 +36,34 @@ public class  TripleShot extends Command {
         Robot.shooter.startMotor();
         Timer.delay(Robot.shooter.delayMotor);
         Robot.shooter.stopMotor();
-        Robot.shooter.servoSet90();
-        Timer.delay(Robot.shooter.delayServo);
-        Robot.shooter.servoSet0();
-        Robot.shooter.conveyorForward();
-        Timer.delay(Robot.shooter.delayConveyor);
-        Robot.shooter.conveyorOff();
+        Robot.servoSub.servoSet90();
+        Timer.delay(Robot.servoSub.delayServo);
+        Robot.servoSub.servoSet0();
+        Robot.conveyorSub.conveyorForward();
+        Timer.delay(Robot.conveyorSub.delayConveyor);
+        Robot.conveyorSub.conveyorOff();
         
         //Shoot 2nd
         Robot.shooter.startMotor();
         Timer.delay(Robot.shooter.delayMotor);
         Robot.shooter.stopMotor();
-        Robot.shooter.servoSet90();
-        Timer.delay(Robot.shooter.delayServo);
-        Robot.shooter.servoSet0();
-        Robot.shooter.conveyorForward();
-        Timer.delay(Robot.shooter.delayConveyor);
-        Robot.shooter.conveyorOff();
+        Robot.servoSub.servoSet90();
+        Timer.delay(Robot.servoSub.delayServo);
+        Robot.servoSub.servoSet0();
+        Robot.conveyorSub.conveyorForward();
+        Timer.delay(Robot.conveyorSub.delayConveyor);
+        Robot.conveyorSub.conveyorOff();
         
         //Shoot 3rd
         Robot.shooter.startMotor();
         Timer.delay(Robot.shooter.delayMotor);
         Robot.shooter.stopMotor();
-        Robot.shooter.servoSet90();
-        Timer.delay(Robot.shooter.delayServo);
-        Robot.shooter.servoSet0();
-        Robot.shooter.conveyorForward();
-        Timer.delay(Robot.shooter.delayConveyor);
-        Robot.shooter.conveyorOff();
+        Robot.servoSub.servoSet90();
+        Timer.delay(Robot.servoSub.delayServo);
+        Robot.servoSub.servoSet0();
+        Robot.conveyorSub.conveyorForward();
+        Timer.delay(Robot.conveyorSub.delayConveyor);
+        Robot.conveyorSub.conveyorOff();
         
         Robot.shooter.running = false;
     }
@@ -78,14 +78,14 @@ public class  TripleShot extends Command {
     // Called once after isFinished returns true
     protected void end() {
         Robot.shooter.stopMotor();
-        Robot.shooter.conveyorOff();
-        Robot.shooter.servoSet0();
+        Robot.conveyorSub.conveyorOff();
+        Robot.servoSub.servoSet0();
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
         Robot.shooter.stopMotor();
-        Robot.shooter.conveyorOff();
-        Robot.shooter.servoSet0();
+        Robot.conveyorSub.conveyorOff();
+        Robot.servoSub.servoSet0();
     }
 }

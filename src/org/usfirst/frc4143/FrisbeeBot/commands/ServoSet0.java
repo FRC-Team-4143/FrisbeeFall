@@ -28,7 +28,7 @@ public class  ServoSet0 extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.shooter.servoSet0();
+        Robot.servoSub.servoSet0();
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
