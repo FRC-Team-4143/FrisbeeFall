@@ -34,36 +34,36 @@ public class  TripleShot extends Command {
         
         //Shoot 1st
         Robot.shooter.startMotor();
-        Timer.delay(Robot.shooter.delayMotor);
-        Robot.shooter.stopMotor();
         Robot.servoSub.servoSet90();
         Timer.delay(Robot.servoSub.delayServo);
         Robot.servoSub.servoSet0();
-        Robot.conveyorSub.conveyorForward();
-        Timer.delay(Robot.conveyorSub.delayConveyor);
+        while (!Robot.conveyorSub.checkSwitch()){
+            Robot.conveyorSub.conveyorForward();
+        }
         Robot.conveyorSub.conveyorOff();
+        Robot.shooter.stopMotor();
         
         //Shoot 2nd
         Robot.shooter.startMotor();
-        Timer.delay(Robot.shooter.delayMotor);
-        Robot.shooter.stopMotor();
         Robot.servoSub.servoSet90();
         Timer.delay(Robot.servoSub.delayServo);
         Robot.servoSub.servoSet0();
-        Robot.conveyorSub.conveyorForward();
-        Timer.delay(Robot.conveyorSub.delayConveyor);
+        while (!Robot.conveyorSub.checkSwitch()){
+            Robot.conveyorSub.conveyorForward();
+        }
         Robot.conveyorSub.conveyorOff();
+        Robot.shooter.stopMotor();
         
         //Shoot 3rd
         Robot.shooter.startMotor();
-        Timer.delay(Robot.shooter.delayMotor);
-        Robot.shooter.stopMotor();
         Robot.servoSub.servoSet90();
         Timer.delay(Robot.servoSub.delayServo);
         Robot.servoSub.servoSet0();
-        Robot.conveyorSub.conveyorForward();
-        Timer.delay(Robot.conveyorSub.delayConveyor);
+        while (!Robot.conveyorSub.checkSwitch()){
+            Robot.conveyorSub.conveyorForward();
+        }
         Robot.conveyorSub.conveyorOff();
+        Robot.shooter.stopMotor();
         
         Robot.shooter.running = false;
     }

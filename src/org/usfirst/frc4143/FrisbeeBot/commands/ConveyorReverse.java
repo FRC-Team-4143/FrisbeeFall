@@ -28,7 +28,9 @@ public class  ConveyorReverse extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        Robot.conveyorSub.conveyorReverse();
+        while (!Robot.conveyorSub.checkSwitch()) {
+            Robot.conveyorSub.conveyorReverse();
+        }
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

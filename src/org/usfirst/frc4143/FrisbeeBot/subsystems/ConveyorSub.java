@@ -51,6 +51,11 @@ public class ConveyorSub extends Subsystem {
         return limitSwitch.get();
     }
     
+    public void limitSwitch(){
+        while (!limitSwitch.get()){
+        }
+    }
+    
     
     
     public void initDefaultCommand(){

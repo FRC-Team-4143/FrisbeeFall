@@ -35,11 +35,11 @@ public class  CompleteShoot extends Command {
         Timer.delay(Robot.servoSub.delayServo);
         Robot.servoSub.servoSet0();
         Robot.shooter.startMotor();
-        Timer.delay(Robot.shooter.delayMotor);
-        Robot.shooter.stopMotor();
-        Robot.conveyorSub.conveyorForward();
-        Timer.delay(Robot.conveyorSub.delayConveyor);
+        while (!Robot.conveyorSub.checkSwitch()){
+            Robot.conveyorSub.conveyorForward();
+        }
         Robot.conveyorSub.conveyorOff();
+        Robot.shooter.stopMotor();
         Robot.shooter.running = false;
     }
     // Make this return true when this Command no longer needs to run execute()
