@@ -35,9 +35,11 @@ public class  CompleteShoot extends Command {
         Timer.delay(Robot.servoSub.delayServo);
         Robot.servoSub.servoSet0();
         Robot.shooter.startMotor();
-        while (!Robot.conveyorSub.checkSwitch()){
+        //while (!Robot.conveyorSub.checkSwitch()){
             Robot.conveyorSub.conveyorForward();
-        }
+        //}
+            Timer.delay(Robot.conveyorSub.delayConveyor);
+            Robot.conveyorSub.conveyorOff();
         Robot.conveyorSub.conveyorOff();
         Robot.shooter.stopMotor();
         Robot.shooter.running = false;
