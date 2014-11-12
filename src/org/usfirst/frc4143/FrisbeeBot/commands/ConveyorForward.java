@@ -28,8 +28,9 @@ public class  ConveyorForward extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        while (!Robot.conveyorSub.checkSwitch())
+        //while (!Robot.conveyorSub.checkSwitch()){
         Robot.conveyorSub.conveyorForward();
+        //}
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

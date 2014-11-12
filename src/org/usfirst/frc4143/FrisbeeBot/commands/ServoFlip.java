@@ -14,8 +14,8 @@ import org.usfirst.frc4143.FrisbeeBot.Robot;
 /**
  *
  */
-public class  ConveyorReverse extends Command {
-    public ConveyorReverse() {
+public class  ServoFlip extends Command {
+    public ServoFlip() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 	
@@ -28,9 +28,8 @@ public class  ConveyorReverse extends Command {
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        //while (!Robot.conveyorSub.checkSwitch()) {
-            Robot.conveyorSub.conveyorReverse();
-        //}
+        Robot.servoSub.servoSet90();
+        Robot.servoSub.servoSet0();
     }
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
@@ -38,11 +37,11 @@ public class  ConveyorReverse extends Command {
     }
     // Called once after isFinished returns true
     protected void end() {
-        Robot.conveyorSub.conveyorOff();
+        Robot.servoSub.servoSet0();
     }
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        Robot.conveyorSub.conveyorOff();
+        Robot.servoSub.servoSet0();
     }
 }
