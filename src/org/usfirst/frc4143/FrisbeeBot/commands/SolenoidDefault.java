@@ -19,9 +19,9 @@ import org.usfirst.frc4143.FrisbeeBot.subsystems.Pneumatics;
 /**
  *
  */
-public class SolenoidExpand extends Command {
+public class SolenoidDefault extends Command {
 
-    public SolenoidExpand() {
+    public SolenoidDefault() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -38,7 +38,15 @@ public class SolenoidExpand extends Command {
     // Called repeatedly when this Command is scheduled to run
 
     protected void execute() {
-        Pneumatics.solenoidExpand();
+        double control = Robot.oi.getImplementJoystickRightY();
+        if (control < -0.1){
+            Pneumatics.solenoidRetract();
+        } else if (control > 0.1){
+            Pneumatics.solenoidExpand();
+        } else{
+            Pneumatics.solenoidOff();
+        }
+        
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -50,13 +58,13 @@ public class SolenoidExpand extends Command {
     // Called once after isFinished returns true
 
     protected void end() {
-        Pneumatics.solenoidOff();
+        
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
 
     protected void interrupted() {
-        Pneumatics.solenoidOff();
+        
     }
 }

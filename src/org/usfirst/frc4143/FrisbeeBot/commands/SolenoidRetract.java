@@ -38,21 +38,13 @@ public class SolenoidRetract extends Command {
     // Called repeatedly when this Command is scheduled to run
 
     protected void execute() {
-        Pneumatics.running = true;
         Pneumatics.solenoidRetract();
-        Timer.delay(Preferences.getInstance().getDouble("SolenoidRetractDistance", .5));
-        Pneumatics.solenoidOff();
-        Pneumatics.running = false;
     }
 
     // Make this return true when this Command no longer needs to run execute()
 
     protected boolean isFinished() {
-        if (!Pneumatics.running) {
-            return true;
-        } else {
             return false;
-        }
     }
 
     // Called once after isFinished returns true
