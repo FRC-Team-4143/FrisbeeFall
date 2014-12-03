@@ -11,7 +11,6 @@ package org.usfirst.frc4143.FrisbeeBot;
     
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import java.util.Vector;
 
 
 public class RobotMap {
