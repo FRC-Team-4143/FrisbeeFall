@@ -65,7 +65,7 @@ public class OI {
         new JoystickButton(xbox1, XboxController.ButtonType.kA.value).whileHeld(new ServoFlip());
         new JoystickButton(xbox1, XboxController.ButtonType.kRTrigger.value).whileHeld(new ShooterMotor());
         new JoystickButton(xbox1, XboxController.ButtonType.kR.value).whileHeld(new ShiftersRetract());
-        new JoystickButton(xbox1, XboxController.ButtonType.kL.value).whileHeld(new shiftersExpand());
+        new JoystickButton(xbox1, XboxController.ButtonType.kL.value).whileHeld(new ShiftersExpand());
         //new JoystickButton(xbox1, XboxController.ButtonType.kX.value).whenPressed(new CompleteShoot());
         //new JoystickButton(xbox1, XboxController.ButtonType.kY.value).whenPressed(new TripleShot());
         new JoystickButton(xbox1, XboxController.ButtonType.kX.value).whileHeld(new SolenoidExpand());
@@ -88,6 +88,8 @@ public class OI {
         SmartDashboard.putData("SolenoidRetract", new SolenoidRetract());
         SmartDashboard.putData("CompleteShoot", new CompleteShoot());
         SmartDashboard.putData("TripleShot", new TripleShot());
+        SmartDashboard.putData("Shifters Retract", new ShiftersRetract());
+        SmartDashboard.putData("Shifters Expand", new ShiftersExpand());
 }
     
 public double getImplementJoystickRightX() {

@@ -7,6 +7,7 @@ package org.usfirst.frc4143.FrisbeeBot.subsystems;
 
 import edu.wpi.first.wpilibj.Preferences;
 import edu.wpi.first.wpilibj.Servo;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc4143.FrisbeeBot.RobotMap;
 
@@ -29,6 +30,12 @@ public class ServoSub extends Subsystem{
     }
     
     public void servoSet0(){
+        servo.setAngle(Preferences.getInstance().getInt("ServoAngle2", 0));
+    }
+    
+    public void servoFlip(){
+        servo.setAngle(Preferences.getInstance().getInt("ServoAngle1", 90));
+        Timer.delay(delayServo);
         servo.setAngle(Preferences.getInstance().getInt("ServoAngle2", 0));
     }
     

@@ -14,7 +14,7 @@ public class ConveyorSub extends Subsystem {
     public boolean conveyorCorrect = true;
 
     
-    public double delayConveyor = Preferences.getInstance().getDouble("delayConveyor", 2.0);
+    public double delayConveyor = Preferences.getInstance().getDouble("delayConveyor", 4.0);
     
     
     

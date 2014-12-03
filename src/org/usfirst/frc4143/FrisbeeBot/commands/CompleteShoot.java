@@ -31,15 +31,10 @@ public class  CompleteShoot extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.shooter.running = true;
-        Robot.servoSub.servoSet90();
-        Timer.delay(Robot.servoSub.delayServo);
-        Robot.servoSub.servoSet0();
+        Robot.servoSub.servoFlip();
         Robot.shooter.startMotor();
-        //while (!Robot.conveyorSub.checkSwitch()){
-            Robot.conveyorSub.conveyorForward();
-        //}
-            Timer.delay(Robot.conveyorSub.delayConveyor);
-            Robot.conveyorSub.conveyorOff();
+        Robot.conveyorSub.conveyorReverse();
+        Timer.delay(Robot.conveyorSub.delayConveyor);
         Robot.conveyorSub.conveyorOff();
         Robot.shooter.stopMotor();
         Robot.shooter.running = false;
