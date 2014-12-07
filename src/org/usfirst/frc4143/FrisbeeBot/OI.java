@@ -67,7 +67,7 @@ public class OI {
         new JoystickButton(xbox1, XboxController.ButtonType.kR.value).whileHeld(new ShiftersRetract());
         new JoystickButton(xbox1, XboxController.ButtonType.kL.value).whileHeld(new ShiftersExpand());
         new JoystickButton(xbox1, XboxController.ButtonType.kBack.value).whenPressed(new CompleteShoot());
-        //new JoystickButton(xbox1, XboxController.ButtonType.kY.value).whenPressed(new TripleShot());
+        new JoystickButton(xbox1, XboxController.ButtonType.kStart.value).whenPressed(new TripleShot());
         new JoystickButton(xbox1, XboxController.ButtonType.kX.value).whileHeld(new SolenoidExpand());
         new JoystickButton(xbox1, XboxController.ButtonType.kY.value).whileHeld(new SolenoidRetract());
         new JoystickButton(xbox1, XboxController.ButtonType.kB.value).whileHeld(new ConveyorReverse());
@@ -91,11 +91,11 @@ public class OI {
         SmartDashboard.putData("Shifters Expand", new ShiftersExpand());
 }
     
-public double getImplementJoystickRightX() {
+    public double getImplementJoystickRightX() {
         if (Math.abs(xbox1.getRawAxis(4)) < deadZone) {
             return 0;
         } else {
-            return xbox1.getRawAxis(1);
+            return xbox1.getRawAxis(4);
         }
     }
 
@@ -103,7 +103,7 @@ public double getImplementJoystickRightX() {
         if (Math.abs(xbox1.getRawAxis(5)) < deadZone) {
             return 0;
         } else {
-            return xbox1.getRawAxis(2);
+            return xbox1.getRawAxis(5);
         }
     }    
     

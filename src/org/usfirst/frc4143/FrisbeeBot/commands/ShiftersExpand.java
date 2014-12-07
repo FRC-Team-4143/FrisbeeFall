@@ -19,9 +19,9 @@ import org.usfirst.frc4143.FrisbeeBot.subsystems.Pneumatics;
 /**
  *
  */
-public class ShiftersRetract extends Command {
+public class ShiftersExpand extends Command {
 
-    public ShiftersRetract() {
+    public ShiftersExpand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 
@@ -38,7 +38,7 @@ public class ShiftersRetract extends Command {
     // Called repeatedly when this Command is scheduled to run
 
     protected void execute() {
-        Pneumatics.shiftersRetract();
+        Pneumatics.shiftersExpand();
     }
 
     // Make this return true when this Command no longer needs to run execute()

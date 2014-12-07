@@ -33,34 +33,28 @@ public class  TripleShot extends Command {
         Robot.shooter.running = true;
         
         //Shoot 1st
+        Robot.servoSub.servoFlip();
         Robot.shooter.startMotor();
-        Robot.servoSub.servoSet90();
-        Timer.delay(Robot.servoSub.delayServo);
-        Robot.servoSub.servoSet0();
-        while (!Robot.conveyorSub.checkSwitch()){
-            Robot.conveyorSub.conveyorForward();
+        while(Robot.conveyorSub.checkSwitch()){
+            Robot.conveyorSub.conveyorReverse();
         }
         Robot.conveyorSub.conveyorOff();
         Robot.shooter.stopMotor();
         
         //Shoot 2nd
+        Robot.servoSub.servoFlip();
         Robot.shooter.startMotor();
-        Robot.servoSub.servoSet90();
-        Timer.delay(Robot.servoSub.delayServo);
-        Robot.servoSub.servoSet0();
-        while (!Robot.conveyorSub.checkSwitch()){
-            Robot.conveyorSub.conveyorForward();
+        while(Robot.conveyorSub.checkSwitch()){
+            Robot.conveyorSub.conveyorReverse();
         }
         Robot.conveyorSub.conveyorOff();
         Robot.shooter.stopMotor();
         
         //Shoot 3rd
+        Robot.servoSub.servoFlip();
         Robot.shooter.startMotor();
-        Robot.servoSub.servoSet90();
-        Timer.delay(Robot.servoSub.delayServo);
-        Robot.servoSub.servoSet0();
-        while (!Robot.conveyorSub.checkSwitch()){
-            Robot.conveyorSub.conveyorForward();
+        while(Robot.conveyorSub.checkSwitch()){
+            Robot.conveyorSub.conveyorReverse();
         }
         Robot.conveyorSub.conveyorOff();
         Robot.shooter.stopMotor();
